@@ -15,20 +15,16 @@ function TodoList() {
         if (!newTask.trim()) return;
 
         setIsLoading(true);
-        setTimeout(() => {
-            const newTaskItem = { id: Date.now(), name: newTask, isCompleted: false };
-            setTasks([newTaskItem, ...tasks]);
-            setNewTask("");
-            setIsLoading(false);
-        }, 500);
+        const newTaskItem = { id: Date.now(), name: newTask, isCompleted: false };
+        setTasks([newTaskItem, ...tasks]);
+        setNewTask("");
+        setIsLoading(false);
     };
 
     const handleRemoveTask = (taskId) => {
         setIsLoading(true);
-        setTimeout(() => {
-            setTasks(tasks.filter((task) => task.id !== taskId));
-            setIsLoading(false);
-        }, 500);
+        setTasks(tasks.filter((task) => task.id !== taskId));
+        setIsLoading(false);
     };
 
     const handleCompleteTask = (taskId) => {
