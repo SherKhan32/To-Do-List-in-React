@@ -32,11 +32,15 @@ function TodoList() {
     };
 
     const handleCompleteTask = (taskId) => {
-        setTasks(tasks.map((task) =>
-            task.id === taskId
-                ? { ...task, isCompleted: !task.isCompleted }
-                : task
-        ));
+        setTasks(
+            tasks.map((task) => {
+                if (task.id === taskId) {
+                    return { ...task, isCompleted: !task.isCompleted };
+                } else {
+                    return task;
+                }
+            })
+        );
     };
 
     return (
@@ -47,14 +51,18 @@ function TodoList() {
                 <input
                     type="text"
                     value={newTask}
-                    onChange={(e)=>{setNewTask(e.target.value)}}
+                    onChange={(e) => {
+                        setNewTask(e.target.value);
+                    }}
                     className="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
                     placeholder="Add new task"
                 />
                 <button
                     type="submit"
                     className={`px-6 py-3 shrink-0 text-white font-bold rounded-md focus:outline-none transition duration-200 ${
-                        !newTask.trim() ? 'bg-green-300 cursor-not-allowed' : 'bg-green-500 hover:bg-green-600'
+                        !newTask.trim()
+                            ? "bg-green-300 cursor-not-allowed"
+                            : "bg-green-500 hover:bg-green-600"
                     }`}
                     disabled={!newTask.trim()}
                 >
