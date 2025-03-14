@@ -1,6 +1,6 @@
 function TodoItem({ task, onRemove, onComplete }) {
     return (
-        <div className="bg-gray-50 p-4 rounded-lg shadow-sm mb-4 flex justify-between items-center">
+        <div className="bg-gray-50 p-4 rounded-lg shadow-sm mb-4 flex gap-5 justify-between items-center">
             <span className={`text-lg ${task.isCompleted ? 'line-through text-gray-500' : 'text-gray-800'}`}>
                 {task.name}
             </span>

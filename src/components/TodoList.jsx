@@ -1,4 +1,4 @@
-import TodoItem from "./TodoItem";
+import TodoItem from "@/components/TodoItem";
 import { useState } from "react";
 
 function TodoList() {
