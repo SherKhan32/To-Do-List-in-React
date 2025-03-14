@@ -16,7 +16,7 @@ function TodoList() {
 
         setIsLoading(true);
         const newTaskItem = { id: Date.now(), name: newTask, isCompleted: false };
-        setTasks([newTaskItem, ...tasks]);
+        setTasks((preTasks)=>[newTaskItem, ...preTasks]);
         setNewTask("");
         setIsLoading(false);
     };
