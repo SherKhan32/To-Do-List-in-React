@@ -10,8 +10,6 @@ function TodoList() {
     const [newTask, setNewTask] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleInputChange = (e) => setNewTask(e.target.value);
-
     const handleAddTask = (e) => {
         e.preventDefault();
         if (!newTask.trim()) return;
@@ -49,7 +47,7 @@ function TodoList() {
                 <input
                     type="text"
                     value={newTask}
-                    onChange={handleInputChange}
+                    onChange={(e)=>{setNewTask(e.target.value)}}
                     className="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
                     placeholder="Add new task"
                 />
